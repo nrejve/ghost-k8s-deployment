@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ghost-service
+spec:
+  selector:
+    app: ghost
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 2368
+  type: NodePort # Use LoadBalancer if you want to access Ghost externally
+
